@@ -5,12 +5,12 @@ const bcryptjs = require('bcryptjs')
 module.exports = [
     /* Email */
     check('email').trim()
-    .notEmpty().withMessage('Debe ingresar su email').bail()
-    .isEmail().withMessage('Debe ingresar un email valido'),
+    .notEmpty().withMessage('Debe ingresar tu email').bail()
+    .isEmail().withMessage('Debe ingresar un email válido'),
 
     /* Contraseña */
     check('pass').trim()
-    .notEmpty().withMessage('Debe ingresar su contraseña').bail()
+    .notEmpty().withMessage('Debe ingresar tu contraseña').bail()
     .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres'),
 
     body('email')
@@ -23,6 +23,6 @@ module.exports = [
             return false
         }
     })
-    .withMessage('El email o la contraseña no coincide')
-    /* .withMessage('El usuario no se encuentra registrado o las credenciales son invalidas') */
+    .withMessage('El email o la contraseña no coinciden')
+    /* .withMessage('El usuario no se encuentra registrado o las credenciales son inválidas') */
 ]
